@@ -1,0 +1,18 @@
+import json
+
+with open("followers_1.json", "r") as f:
+    followers_data = json.load(f)
+    followers = {i["string_list_data"][0]["value"] for i in followers_data}
+    
+
+with open("following.json", "r") as f:
+    following_data = json.load(f)   
+    following = {j["title"] for j in following_data["relationships_following"]}
+
+
+
+unfollowers = following - followers
+
+print(f"Found {len(unfollowers)} people not following you back.")
+for name in sorted(unfollowers):
+    print(name) 
