@@ -1,5 +1,5 @@
 # unfollowers-list-instagram
-get the id's of people who dont follow you back
+get the id's of people who dont follow you back in python
 
 to get the json files from instagram:
 
